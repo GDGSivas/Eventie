@@ -20,6 +20,8 @@ import App from './App.vue'
 import router from './router'
 import './registerServiceWorker'
 import ArgonDashboard from './plugins/argon-dashboard'
+import { firestorePlugin } from 'vuefire';
+Vue.use(firestorePlugin);
 
 Vue.config.productionTip = false
 

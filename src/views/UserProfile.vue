@@ -190,23 +190,28 @@
     </div>
 </template>
 <script>
-  export default {
-    name: 'user-profile',
-    data() {
-      return {
-        model: {
-          username: '',
-          email: '',
-          firstName: '',
-          lastName: '',
-          address: '',
-          city: '',
-          country: '',
-          zipCode: '',
-          about: '',
-        }
-      }
-    },
-  };
+    import {db} from "../db/firebase";
+
+    export default {
+        name: 'user-profile',
+        data() {
+            return {
+                users:[],
+                model: {
+                    username: '',
+                    email: '',
+                    firstName: '',
+                    lastName: '',
+                    address: '',
+                    city: '',
+                    country: '',
+                    zipCode: '',
+                    about: '',
+                }
+            }
+        },
+        firestore: {
+            users: db.collection('users'),
+        },
+    };
 </script>
-<style></style>
