@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody :class="tbodyClasses">
-      <tr v-for="(item, index) in data" :key="index">
+      <tr v-for="(item, index) in data" :key="index" :class="isActive(index)">
         <slot :row="item" :index="index">
           <td
             v-for="(column, index) in colsWithValue(item)"
@@ -48,6 +48,10 @@ export default {
       type: String,
       default: '',
       description: '<tbody> css classes'
+    },
+    activeRow: {
+      type: Number,
+      default: -1,
     }
   },
   computed: {
@@ -66,6 +70,10 @@ export default {
     },
     itemValue(item, column) {
       return item[column.toLowerCase()];
+    },
+    isActive(item){
+      return item==this.activeRow ? 'bg-success' : '';
+
     }
   }
 };

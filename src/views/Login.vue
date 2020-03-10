@@ -9,14 +9,14 @@
                                 <span class="btn-inner--icon"><img src="img/icons/common/github.svg"></span>
                                 <span class="btn-inner--text">Github</span>
                             </a>
-                            <a href="#" class="btn btn-neutral btn-icon">
+                            <!-- <a href="#" class="btn btn-neutral btn-icon">
                                 <span class="btn-inner--icon"><img src="img/icons/common/google.svg"></span>
                                 <span class="btn-inner--text">Google</span>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
-                        <div class="text-center text-muted mb-4">
+                        <!-- <div class="text-center text-muted mb-4">
                             <small>Or sign in with credentials</small>
                         </div>
                         <form role="form">
@@ -39,7 +39,7 @@
                             <div class="text-center">
                                 <base-button type="primary" class="my-4">Sign in</base-button>
                             </div>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
                 <div class="row mt-3">
