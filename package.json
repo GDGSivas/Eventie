@@ -23,7 +23,8 @@
     "vue-flatpickr-component": "8.1.2",
     "vue-router": "3.0.1",
     "vue2-transitions": "0.3.0",
-    "vuefire": "^2.2.1"
+    "vuefire": "^2.2.1",
+    "@firebase/firestore": "latest"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
@@ -35,7 +36,8 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "2.6.6"
+    "vue-template-compiler": "2.6.6",
+    "@firebase/firestore": "latest"
   },
   "eslintConfig": {
     "root": true,
