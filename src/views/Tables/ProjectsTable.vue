@@ -22,8 +22,8 @@
           <th>Saat</th>
         </template>
 
-        <template slot-scope="{ row }" >
-          <th scope="row" >
+        <template slot-scope="{ row }">
+          <th scope="row">
             <div class="media align-items-center">
               <a href="#" class="avatar rounded-circle mr-3">
                 <img alt="Image placeholder" :src="row.img" />
@@ -44,6 +44,8 @@
   </div>
 </template>
 <script>
+import { db } from "../db/firebase";
+
 export default {
   name: "projects-table",
   props: {
@@ -52,40 +54,44 @@ export default {
     },
     title: String
   },
+  firestore: {
+    speakers: db.collection("speakers")
+  },
   data() {
     return {
       activeRow: 0,
+      speakers: [],
+
       tableData: [
         {
           img: "img/theme/bootstrap.jpg",
           title: "Argon Design System",
           name: "Batuhan Hasan AKIN",
-          clock: "12.40",
+          clock: "12.40"
         },
         {
           img: "img/theme/angular.jpg",
           title: "Angular Now UI Kit PRO",
           name: "Batuhan Hasan AKIN",
-          clock: "13.00",
+          clock: "13.00"
         },
         {
           img: "img/theme/sketch.jpg",
           name: "Batuhan Hasan AKIN",
           title: "Black Dashboard",
-          clock: "13.00",
+          clock: "13.00"
         },
         {
           img: "img/theme/react.jpg",
           title: "React Material Dashboard",
           name: "Batuhan Hasan AKIN",
-          clock: "13.00",
-
+          clock: "13.00"
         },
         {
           img: "img/theme/vue.jpg",
           title: "Vue Paper UI Kit PRO",
           name: "Batuhan Hasan AKIN",
-          clock: "13.00",
+          clock: "13.00"
         }
       ]
     };
@@ -93,15 +99,15 @@ export default {
 };
 </script>
 <style>
-.speaker-name{
-    color: #808080d6;
-    font-size: 13px !important;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+.speaker-name {
+  color: #808080d6;
+  font-size: 13px !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
-.clock{
+.clock {
   font-size: 18px !important;
-    font-weight: bold;
-    color: gray;
+  font-weight: bold;
+  color: gray;
 }
 </style>
