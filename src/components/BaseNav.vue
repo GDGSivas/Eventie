@@ -16,7 +16,7 @@
                                   :toggled="toggled"
                                   :target="contentId"
                                   @click.native.stop="toggled = !toggled">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"/>
             </navbar-toggle-button>
 
             <div class="collapse navbar-collapse"
@@ -24,7 +24,7 @@
                  :id="contentId"
                  v-click-outside="closeMenu">
 
-                <slot :close-menu="closeMenu"></slot>
+                <slot :close-menu="closeMenu"/>
             </div>
         </div>
     </nav>

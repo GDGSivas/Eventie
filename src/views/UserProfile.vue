@@ -67,8 +67,10 @@ export default {
       users: []
     };
   },
-  firestore: {
-    users: db.collection("users")
+  firestore() {
+    return {
+      users: db.collection("users")
+    }
   }
 };
 </script>

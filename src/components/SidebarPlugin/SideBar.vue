@@ -4,10 +4,11 @@
 
             <!--Toggler-->
             <navbar-toggle-button @click.native="showSidebar">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"/>
             </navbar-toggle-button>
             <router-link class="navbar-brand" to="/">
-                <img :src="logo" class="navbar-brand-img" alt="...">
+                <img :src="logo" class="navbar-brand-img" alt="GDG & WTM">
+                WTM Sivas
             </router-link>
 
             <slot name="mobile-right">
@@ -15,7 +16,7 @@
                     <base-dropdown class="nav-item" position="right">
                         <a slot="title" class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
-                            <i class="ni ni-bell-55"></i>
+                            <i class="ni ni-bell-55"/>
                         </a>
 
                         <a class="dropdown-item" href="#">Action</a>
@@ -36,41 +37,41 @@
                             <h6 class="text-overflow m-0">Welcome!</h6>
                         </div>
                         <router-link to="/profile" class="dropdown-item">
-                            <i class="ni ni-single-02"></i>
+                            <i class="ni ni-single-02"/>
                             <span>My profile</span>
                         </router-link>
                         <router-link to="/profile" class="dropdown-item">
-                            <i class="ni ni-settings-gear-65"></i>
+                            <i class="ni ni-settings-gear-65"/>
                             <span>Settings</span>
                         </router-link>
                         <router-link to="/profile" class="dropdown-item">
-                            <i class="ni ni-calendar-grid-58"></i>
+                            <i class="ni ni-calendar-grid-58"/>
                             <span>Activity</span>
                         </router-link>
                         <router-link to="/profile" class="dropdown-item">
-                            <i class="ni ni-support-16"></i>
+                            <i class="ni ni-support-16"/>
                             <span>Support</span>
                         </router-link>
                         <div class="dropdown-divider"></div>
                         <a href="#!" class="dropdown-item">
-                            <i class="ni ni-user-run"></i>
+                            <i class="ni ni-user-run"/>
                             <span>Logout</span>
                         </a>
                     </base-dropdown>
                 </ul>
             </slot>
-            <slot></slot>
+            <slot/>
             <div v-show="$sidebar.showSidebar" class="navbar-collapse collapse show" id="sidenav-collapse-main">
 
                 <div class="navbar-collapse-header d-md-none">
                     <div class="row">
                         <div class="col-6 collapse-brand">
-                            <router-link to="/">
-                                <img :src="logo">
+                            <router-link to="/" class="navbar-brand">
+                                <img :src="logo"> WTM Sivas
                             </router-link>
                         </div>
                         <div class="col-6 collapse-close">
-                            <navbar-toggle-button @click.native="closeSidebar"></navbar-toggle-button>
+                            <navbar-toggle-button @click.native="closeSidebar"/>
                         </div>
                     </div>
                 </div>
@@ -88,19 +89,19 @@
                     <li class="nav-item">
                         <a class="nav-link"
                            href="https://demos.creative-tim.com/vue-argon-dashboard/documentation">
-                            <i class="ni ni-spaceship"></i> Getting started
+                            <i class="ni ni-spaceship"/> Getting started
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
                            href="https://demos.creative-tim.com/vue-argon-dashboard/documentation/foundation/colors.html">
-                            <i class="ni ni-palette"></i> Foundation
+                            <i class="ni ni-palette"/> Foundation
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
                            href="https://demos.creative-tim.com/vue-argon-dashboard/documentation/components/alerts.html">
-                            <i class="ni ni-ui-04"></i> Components
+                            <i class="ni ni-ui-04"/> Components
                         </a>
                     </li>
                 </ul>
@@ -119,7 +120,7 @@
     props: {
       logo: {
         type: String,
-        default: 'img/brand/green.png',
+        default: 'https://gdgsivas.org/iwd2020/images/wtm-logo.png',
         description: 'Sidebar app logo'
       },
       autoClose: {
