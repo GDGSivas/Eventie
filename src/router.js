@@ -24,8 +24,13 @@ export default new Router({
         },
         {
           path: '/events/:id',
-          name: 'programs',
-          component: () => import('./views/Programs.vue'),
+          name: 'eventDetail',
+          component: () => import('./views/EventDetail.vue'),
+        },
+        {
+          path: '/events/:eventID/programs/:programID',
+          name: 'programDetail',
+          component: () => import('./views/ProgramDetail.vue'),
         }
       ]
     },

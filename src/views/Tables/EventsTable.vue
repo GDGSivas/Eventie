@@ -17,7 +17,7 @@
         :activeRow="activeRow"
       >
         <template slot-scope="{ row }">
-            <td @click="goToProgram(row.id)">
+            <td @click="goToEvent(row.id)">
               <div class="media align-items-center">
                 <a href="#" class="avatar rounded-circle mr-3">
                   <img alt="Image" :src="row.imgUrl" />
@@ -46,9 +46,9 @@
       activeRow:Number,
     },
     methods:{
-      goToProgram(id){
+      goToEvent(id){
         this.$router.push({
-          name:'programs',
+          name:'eventDetail',
           params:{id},
         });
       }
@@ -62,7 +62,7 @@
   font-weight: 600;
   letter-spacing: 0.5px;
 }
-.clock {
+.name {
   font-size: 18px !important;
   font-weight: bold;
   color: gray;

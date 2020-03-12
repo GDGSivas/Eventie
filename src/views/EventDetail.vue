@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col">
                     <programs-table
-                            title="Etkinlik Akisi"
+                            title="Etkinlik Akışı"
                             :tableData="programs"
                             :activeRow="activeRow"
                     />

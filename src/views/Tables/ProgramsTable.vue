@@ -17,7 +17,7 @@
         :activeRow="activeRow"
       >
         <template slot-scope="{ row }">
-          <td>
+          <td @click="goToProgram($route.params.id,row.id)">
             <div class="media align-items-center">
               <a href="#" class="avatar rounded-circle mr-3">
                 <img alt="Program Image" :src="row.imgUrl"/>
@@ -37,6 +37,14 @@
 <script>
 export default {
   name: "programs-table",
+  methods:{
+    goToProgram(eventID,programID){
+      this.$router.push({
+        name:'programDetail',
+        params:{eventID,programID},
+      });
+    }
+  },
   props: {
     type: {
       type: String
