@@ -11,7 +11,6 @@
                             :tableData="programs"
                             :activeRow="activeRow"
                     />
-
                 </div>
             </div>
         </div>
