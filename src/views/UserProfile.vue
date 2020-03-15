@@ -70,16 +70,21 @@ export default {
   firestore() {
     return {
       users: db.collection("users")
-    }
+    };
   }
 };
 </script>
 <style>
+@media only screen and (min-width: 767px) {
+  .text-center {
+    padding-top: 50px !important;
+  }
+}
 .col-xl-4 order-xl-2 mb-5 mb-xl-0 {
   display: contents;
 }
-.text-center{
-    font-size: 10px;
-    margin-top: 10px;
+.text-center {
+  font-size: 10px;
+  margin-top: 10px;
 }
 </style>
