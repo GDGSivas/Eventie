@@ -4,7 +4,7 @@
       <div class="row align-items-center">
         <div class="col">
           <h3 class="mb-0">
-            {{title}}
+            {{ title }}
           </h3>
         </div>
       </div>
@@ -17,15 +17,16 @@
         :activeRow="activeRow"
       >
         <template slot-scope="{ row }">
-          <td @click="goToProgram($route.params.id,row.id)">
+          <td @click="goToProgram($route.params.id, row.id)">
             <div class="media align-items-center">
               <a href="#" class="avatar rounded-circle mr-3">
-                <img alt="Program Image" :src="row.imgUrl"/>
+                <img alt="Program Image" :src="row.imgUrl" />
               </a>
               <div class="media-body">
                 <span class="name mb-0 text-sm">{{ row.name }}</span>
                 <p class="speaker-name">{{ row.speaker.name }}</p>
-                {{ row.time }}
+                {{ row.time_start.toDate().customTime() }} -
+                {{ row.time_end.toDate().customTime() }}
               </div>
             </div>
           </td>
@@ -35,24 +36,25 @@
   </div>
 </template>
 <script>
+require("../../components/dateToString");
 export default {
   name: "programs-table",
-  methods:{
-    goToProgram(eventID,programID){
+  methods: {
+    goToProgram(eventID, programID) {
       this.$router.push({
-        name:'programDetail',
-        params:{eventID,programID},
+        name: "programDetail",
+        params: { eventID, programID },
       });
-    }
+    },
   },
   props: {
     type: {
-      type: String
+      type: String,
     },
     title: String,
-    tableData:Array,
-    activeRow:Number,
-  }
+    tableData: Array,
+    activeRow: Number,
+  },
 };
 </script>
 <style>

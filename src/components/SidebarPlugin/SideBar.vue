@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <router-link to="/" class="navbar-brand">
-                                <img :src="logo"> WTM Sivas
+                                <img :src="logo"> Gdg Sivas
                             </router-link>
                         </div>
                         <div class="col-6 collapse-close">

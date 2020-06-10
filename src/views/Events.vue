@@ -21,7 +21,7 @@
     export default {
         name: 'events',
         firestore: {
-          events: db.collection("events")
+          events: db.collection("events").orderBy('date', 'asc')
         },
         components: {
           EventsTable

@@ -12,7 +12,7 @@
                             <div class="row align-items-center">
                                 <div class="col">
                                     <h3 class="mb-0">
-                                        {{program.name}} <span class="badge badge-success">{{ program.time }}</span>
+                                        {{program.name}} <span class="badge badge-success">{{ program.time_start.toDate().customTime() }} -{{ program.time_end.toDate().customTime() }} </span>
                                     </h3>
                                     <p>{{program.content}}</p>
                                 </div>
@@ -38,6 +38,7 @@
 </template>
 <script>
     import {db} from "../db/firebase";
+    require ("../../src/components/dateToString")
 
     export default {
         name: 'program-detail',

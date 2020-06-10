@@ -21,13 +21,13 @@
     import {db} from "../db/firebase";
 
     export default {
-        name: 'programs',
+        name: 'eventDetail',
         components: {
             ProgramsTable
         },
         firestore(){
             return {
-                programs:db.collection("events").doc(this.$route.params.id).collection('programs')
+                programs:db.collection("events").doc(this.$route.params.id).collection('programs').orderBy('time_start')
             }
         },
         data(){
