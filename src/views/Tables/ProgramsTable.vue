@@ -1,10 +1,11 @@
 <template>
   <div class="card shadow">
+    <img alt="Program Image" :src="event.imgUrl" class="w-100 card-img-top"/>
     <div class="card-header border-0">
       <div class="row align-items-center">
         <div class="col">
-          <h3 class="mb-0">
-            {{ title }}
+          <h3 class="ml-8">
+            {{ event.name ? event.name : "" }}
           </h3>
         </div>
       </div>
@@ -14,7 +15,7 @@
         class="table align-items-center table-flush"
         tbody-classes="list"
         :data="tableData"
-        :activeRow="activeRow"
+        :activeRow="-1"
       >
         <template slot-scope="{ row }">
           <td @click="goToProgram($route.params.id, row.id)">
@@ -48,12 +49,8 @@ export default {
     },
   },
   props: {
-    type: {
-      type: String,
-    },
-    title: String,
     tableData: Array,
-    activeRow: Number,
+    event: Object
   },
 };
 </script>

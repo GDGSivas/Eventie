@@ -20,7 +20,7 @@
 					<td @click="goToEvent(row.id)">
 						<div class="media align-items-center">
 							<a href="#" class="avatar rounded-circle mr-3">
-								<img alt="Image" : src="row.imgUrl" />
+								<img alt="Image" :src="row.imgUrl" />
 							</a>
 							<div class="media-body">
 								<span class="name mb-0 text-sm">{{

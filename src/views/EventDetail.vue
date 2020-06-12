@@ -7,9 +7,8 @@
             <div class="row">
                 <div class="col">
                     <programs-table
-                            title="Etkinlik Akışı"
+                            :event="activeEvent"
                             :tableData="programs"
-                            :activeRow="activeRow"
                     />
                 </div>
             </div>
@@ -17,8 +16,9 @@
     </div>
 </template>
 <script>
-    import ProgramsTable from './Tables/ProgramsTable'
+    import ProgramsTable from './Tables/ProgramsTable';
     import {db} from "../db/firebase";
+    const eventss = db.collection("events");
 
     export default {
         name: 'eventDetail',
@@ -27,13 +27,14 @@
         },
         firestore(){
             return {
-                programs:db.collection("events").doc(this.$route.params.id).collection('programs').orderBy('time_start')
+                programs: eventss.doc(this.$route.params.id).collection('programs').orderBy('time_start'),
+                activeEvent: eventss.doc(this.$route.params.id)
             }
         },
         data(){
             return {
                 programs:[],
-                activeRow:-1,
+                activeEvent: {},
             }
         }
   };
