@@ -14,11 +14,6 @@ export default new Router({
       component: DashboardLayout,
       children: [
         {
-          path: '/profile',
-          name: 'profile',
-          component: () => import('./views/UserProfile.vue')
-        },
-        {
           path: '/events',
           name: 'events',
           component: () => import('./views/Events.vue'),
@@ -51,6 +46,10 @@ export default new Router({
           component: () => import('./views/Register.vue')
         }
       ]
-    }
+    },
+    {
+      path: '*', 
+      redirect: { name: 'events' } 
+    },
   ]
 })

@@ -19,7 +19,7 @@
 				<template slot-scope="{ row }">
 					<td @click="goToEvent(row.id)">
 						<div class="media align-items-center">
-							<a href="#" class="avatar rounded-circle mr-3">
+							<a href="#" class="avatar rounded-circle mr-3" v-if="row.imgUrl">
 								<img alt="Image" :src="row.imgUrl" />
 							</a>
 							<div class="media-body">

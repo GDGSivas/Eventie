@@ -6,7 +6,7 @@
       title="GDG"
     >
       <template slot="links">
-        <sidebar-item :link="{name: 'User Profile', icon: 'ni ni-single-02 text-yellow', path: '/profile'}"/>
+        <!-- <sidebar-item :link="{name: 'User Profile', icon: 'ni ni-single-02 text-yellow', path: '/profile'}"/> -->
         <sidebar-item :link="{name: 'Etkinlikler', icon: 'ni ni-calendar-grid-58 text-blue', path: '/events'}"/>
       </template>
     </side-bar>
