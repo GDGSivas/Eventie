@@ -14,29 +14,31 @@ export const db = firebase
 })
 .firestore();
 
-// Retrieve Firebase Messaging object.
-const messaging = firebase.messaging();
+function isSupported(){
+	return firebase.messaging.isSupported();
+}
+export function getPermission() {
+	return isSupported() ? Notification.permission : null;
+}
 
-// Add the public key generated from the console here.
-messaging.usePublicVapidKey("BBerdJcgORYrhrRwL6vJdVpNw4NChrOtE0_0v8pOzDugdghhjLw-SgG2XLQYUBlQsOB_cyOWIJfrnUX0XDH2Cg4");
+const messaging = isSupported() ? firebase.messaging() : {};
+export function askPermission() {
+	if (!isSupported())
+		return false;
+	else {
+		messaging.getToken().then(() => {
 
-// Get Instance ID token. Initially this makes a network call, once retrieved
-// subsequent calls to getToken will return from cache.
-export const askPermission = function () {
-	messaging.getToken().then(() => {
+		}).catch(() => {
 
-	}).catch(() => {
+		}).finally(function () {
+			window.EventBus.$emit("changedPermission");
+		});
+	}
+}
 
-	}).finally(function(){
-		window.EventBus.$emit("changedPermission");
+if (isSupported()) {
+	messaging.usePublicVapidKey("BBerdJcgORYrhrRwL6vJdVpNw4NChrOtE0_0v8pOzDugdghhjLw-SgG2XLQYUBlQsOB_cyOWIJfrnUX0XDH2Cg4");
+	messaging.onMessage(function (message) {
+		window.EventBus.$emit("getMessage", message);
 	});
-};
-
-messaging.onMessage(function (message) {
-	window.console.log("mesaj geldi");
-	window.EventBus.$emit("getMessage",message);
-});
-
-export const getPermission = function(){
-	return Notification.permission;
 }

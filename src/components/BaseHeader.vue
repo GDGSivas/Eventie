@@ -41,8 +41,7 @@
 			});
 		},
 		methods: {
-			askPermission,
-			getPermission
+			askPermission
 		}
 	}
 </script>
