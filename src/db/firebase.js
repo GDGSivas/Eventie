@@ -14,21 +14,21 @@ export const db = firebase
 })
 .firestore();
 
-function isSupported(){
+function isSupported() {
 	return firebase.messaging.isSupported();
 }
+
 export function getPermission() {
 	return isSupported() ? Notification.permission : null;
 }
 
 const messaging = isSupported() ? firebase.messaging() : {};
+
 export function askPermission() {
 	if (!isSupported())
 		return false;
 	else {
-		messaging.getToken().then(() => {
-
-		}).catch(() => {
+		messaging.getToken().catch(() => {
 
 		}).finally(function () {
 			window.EventBus.$emit("changedPermission");

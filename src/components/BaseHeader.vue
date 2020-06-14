@@ -8,7 +8,13 @@
                 <base-alert type="danger" v-if="permission=='denied'">Bildirimleri engellediğiniz için bildirim
                     alamayacaksınız!
                 </base-alert>
-                <base-alert type="danger" v-if="notification"><b>{{notification.title}}</b> {{notification.body}}
+                <base-alert type="warning" dismissible v-if="notification">
+                    <span class="alert-inner--icon mr-2"><i class="ni ni-notification-70"></i></span>
+                    <span class="alert-inner--text"><b>{{notification.title}}</b> {{notification.body}}</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                            @click="()=>{this.notification=null}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </base-alert>
                 <slot></slot>
             </div>
