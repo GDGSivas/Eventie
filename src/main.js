@@ -22,7 +22,7 @@ import './registerServiceWorker'
 import ArgonDashboard from './plugins/argon-dashboard'
 import { firestorePlugin } from 'vuefire';
 Vue.use(firestorePlugin);
-
+window.EventBus = new Vue();
 Vue.config.productionTip = false
 
 Vue.use(ArgonDashboard)
