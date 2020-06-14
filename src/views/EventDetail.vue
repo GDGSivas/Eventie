@@ -16,26 +16,27 @@
     </div>
 </template>
 <script>
-    import ProgramsTable from './Tables/ProgramsTable';
-    import {db} from "../db/firebase";
-    const eventss = db.collection("events");
+	import ProgramsTable from './Tables/ProgramsTable';
+	import {db} from "../db/firebase";
 
-    export default {
-        name: 'eventDetail',
-        components: {
-            ProgramsTable
-        },
-        firestore(){
-            return {
-                programs: eventss.doc(this.$route.params.id).collection('programs').orderBy('time_start'),
-                activeEvent: eventss.doc(this.$route.params.id)
-            }
-        },
-        data(){
-            return {
-                programs:[],
-                activeEvent: {},
-            }
-        }
-  };
+	const eventsCollection = db.collection("events");
+
+	export default {
+		name: 'eventDetail',
+		components: {
+			ProgramsTable
+		},
+		firestore() {
+			return {
+				programs: eventsCollection.doc(this.$route.params.id).collection('programs').orderBy('time_start'),
+				activeEvent: eventsCollection.doc(this.$route.params.id)
+			}
+		},
+		data() {
+			return {
+				programs: [],
+				activeEvent: {},
+			}
+		}
+	};
 </script>
