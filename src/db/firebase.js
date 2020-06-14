@@ -12,5 +12,3 @@ export const db = firebase
             appId: "1:560951531202:web:5bcf0f131ed126d5c14d5b"
     })
     .firestore();
-
-export const { Timestamp, GeoPoint } = firebase.firestore;
